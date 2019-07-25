@@ -181,7 +181,7 @@ MEDIA_URL = '/media/'
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 
 STATICFILES_DIRS = [
-    os.path.join(REACT_APP_DIR, 'frontend/static/build/static'),
+    os.path.join(BASE_DIR, 'frontend/static/build/static'),
 ]
 
 
