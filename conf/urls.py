@@ -23,7 +23,13 @@ urlpatterns = [
     path('api/v1/', include ('api.urls')),
     path('accounts/', include('accounts.urls')),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', include('rest_auth.registration.urls'))
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('login/', include('frontend.urls')),
+    path('signup/', include('frontend.urls')),
+    path('trails/:id/', include('frontend.urls')),
+    path('trails/', include('frontend.urls')),
+    path('simpleMap/', include('frontend.urls')),
+    path('', include('frontend.urls')),
 ]
 
 if settings.DEBUG:
