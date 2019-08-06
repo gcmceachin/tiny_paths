@@ -177,7 +177,7 @@ class TrailList extends Component {
 
             axios.get(`${BASE_URL}/api/v1/hiker_api/?lat=${crd.latitude}&lon=${crd.longitude}&max_distance=${max_distance}`)
                 .then(response => {
-                    console.log(response.data.trails);
+                    console.log('here', response);
                     let trails = response.data.trails.filter(trail => (
                         trail.difficulty === 'blue' || trail.difficulty === 'green'
                     ));
