@@ -7,7 +7,7 @@ import {Button, Form} from "react-bootstrap";
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class SignupForm extends Component {
 
@@ -48,7 +48,7 @@ class SignupForm extends Component {
     handleSignup(e) {
         e.preventDefault();
         console.log(this.state.fields);
-        axios.post('http://localhost:3000/rest-auth/registration/',this.state.fields)
+        axios.post(`${BASE_URL}/rest-auth/registration/`,this.state.fields)
             .then(response => {
                 console.log(response);
                 localStorage.setItem('token', response.data.key);

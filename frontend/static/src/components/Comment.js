@@ -5,7 +5,7 @@ import {Button} from 'react-bootstrap';
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -35,7 +35,7 @@ class Comment extends Component {
 
             comment.text = this.state.text;
 
-            axios.put(`http://localhost:3000/api/v1/comments/${comment.id}/`, comment)  //The put request allows for a completely new comment to be saved.
+            axios.put(`${BASE_URL}/api/v1/comments/${comment.id}/`, comment)  //The put request allows for a completely new comment to be saved.
             .then(response => {
                     console.log(response);
                     this.props.updateComment(response.data);

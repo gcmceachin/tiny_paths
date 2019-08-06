@@ -8,6 +8,8 @@ import {withRouter} from 'react-router-dom';
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 class LoginForm extends Component {
 
     constructor(props) {
@@ -36,7 +38,7 @@ class LoginForm extends Component {
         this.props.history.push('/');
         //stackoverflow.com/questions/42701129/how-to-push-to-history-in-react-router-v4
 
-        axios.post('http://localhost:3000/rest-auth/login/', data)
+        axios.post(`${BASE_URL}/rest-auth/login/`, data)
             .then(response => {
                 console.log(response);
                 // save token to local storage for future axios requests

@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css'
 import Jumbotron from "react-bootstrap/Jumbotron";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class Trail extends Component {
     render() {
@@ -35,7 +36,7 @@ class Home extends Component {
     }
 
     getTrails = () => {
-        axios.get('http://localhost:3000/api/v1/trails/')
+        axios.get(`${BASE_URL}/api/v1/trails/`)
             .then((response) => {
                 console.log(response);
                 this.setState({trails: response.data});
