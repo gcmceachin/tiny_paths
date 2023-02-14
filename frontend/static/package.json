@@ -9,7 +9,7 @@
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
     "history": "^4.9.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "pillow": "0.0.9",
     "react": "^16.8.6",
     "react-bootstrap": "^1.6.6",
